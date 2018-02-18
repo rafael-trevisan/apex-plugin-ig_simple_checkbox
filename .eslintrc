@@ -1,0 +1,19 @@
+{
+  extends: "airbnb",
+
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    jquery: true,
+  },
+
+  rules: {
+    indent: ["error", 2, {"SwitchCase": 1}],
+    no-undef: ["error", { "typeof": true }],
+    no-console: ["error", { allow: ["info", "warn", "error"] }],
+    linebreak-style: 0,
+    no-underscore-dangle: ["error", { "allow": ["_data"] }],
+    no-eval: 0,
+  }
+}

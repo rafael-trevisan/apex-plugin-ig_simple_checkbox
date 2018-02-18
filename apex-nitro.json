@@ -1,0 +1,32 @@
+{
+  "mode": "advanced",
+  "appURL": "https://apex.oracle.com/pls/apex/f?p=9285",
+  "srcFolder": "***/apex-plugin-ig_simple_checkbox/src",
+  "distFolder": "***/apex-plugin-ig_simple_checkbox/dist",
+  "js": {
+    "processor": "webpack",
+    "concat": false,
+    "entries": ["***/apex-plugin-ig_simple_checkbox/src/js/ca_trevis_apex_ig_simple_checkbox.js"],
+    "bundleFilename": "ca_trevis_apex_ig_simple_checkbox.bundle",
+    "library": true,
+    "libraryName": "ca_trevis_apex_ig_simple_checkbox",
+    "tsConcat": false
+  },
+  "css": {
+    "language": "sass",
+    "concat": false
+  },
+  "browsersync": {
+    "notify": false,
+    "ghostMode": false
+  },
+  "header": {
+    "enabled": false
+  },
+  "apex": {
+    "openBuilder": true
+  },
+  "publish": {
+    "destination": "application"
+  }
+}
