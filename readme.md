@@ -10,7 +10,7 @@ set 2 values (one for checked and another for unchecked). It's perfect for Y(es)
 ![](https://github.com/rafael-trevisan/apex-plugin-ig_simple_checkbox/blob/master/docs/img/ig-simple-checkbox-example.png)
 
 ## Install
-- Import plugin file `item_type_plugin_ca_trevis_apex_ig_simple_checkbox.sql` from root directory into your application.
+- Import plugin file `ig_simple_checkbox.sql` from root directory into your application.
 
 ## Demo Application
 [https://apex.oracle.com/pls/apex/f?p=trevis:ig-simple-checkbox](https://apex.oracle.com/pls/apex/f?p=trevis:ig-simple-checkbox)

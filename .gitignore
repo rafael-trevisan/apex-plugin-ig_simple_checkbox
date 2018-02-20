@@ -1,6 +1,7 @@
-.DS_Store
-node_modules
+.DS_Store/
+node_modules/
 dist/css/*.map
 dist/css/ca_trevis_apex_ig_simple_checkbox.css
 dist/js/*.map
 dist/js/ca_trevis_apex_ig_simple_checkbox.bundle.js
+dist/plsql/

@@ -68,7 +68,7 @@ wwv_flow_api.create_plugin(
 '    sys.htp.prn(',
 '      apex_string.format(',
 '        ''<input type="text" %s id="%s" value="%s"/>''',
-'        , apex_plugin_util.get_element_attributes(p_item, p_item.name, ''apex-item-igsimplecheckbox apex-item-plugin'')',
+'        , apex_plugin_util.get_element_attributes(p_item, c_name, ''apex-item-igsimplecheckbox apex-item-plugin'')',
 '        , p_item.name',
 '        , case when p_param.value is null then '''' else ltrim( rtrim ( c_escaped_value ) ) end',
 '      )',
@@ -129,7 +129,7 @@ wwv_flow_api.create_plugin(
 ,p_standard_attributes=>'VISIBLE:SESSION_STATE:READONLY:SOURCE:ICON:ENCRYPT'
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
-,p_version_identifier=>'18.2.0'
+,p_version_identifier=>'18.2.1'
 ,p_about_url=>'https://github.com/rafael-trevisan/apex-plugin-ig_simple_checkbox'
 ,p_files_version=>5
 );
