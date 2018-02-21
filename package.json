@@ -1,6 +1,6 @@
 {
   "name": "apex-plugin-ig_simple_checkbox",
-  "version": "18.2.1",
+  "version": "18.2.2",
   "description": "This plug-in displays a single checkbox in Interactive Grids but allows you to set 2 values (one for checked and another for unchecked). It's perfect for Y(es)/N(o) or 1/0 type checkboxes.",
   "main": "item_type_plugin_ca_trevis_apex_ig_simple_checkbox.sql",
   "scripts": {

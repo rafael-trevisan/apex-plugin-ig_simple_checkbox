@@ -56,19 +56,9 @@ const init = (itemId, options) => {
     return out.toString();
   };
 
-  const updateDisplay = () => {
-    const checkbox$ = sr$.find('input[type="checkbox"]');
-    checkbox$.prop('checked', item$.val() === checkedValue);
-  };
-
-  sr$.append(render());
-
-  sr$.find('input[type="checkbox"]').on('change', (e) => {
-    const checkbox$ = $(e.currentTarget);
-    item$.val(checkbox$.prop('checked') ? checkedValue : uncheckedValue).change();
-
-    const rowId = checkbox$.closest('tr').data('id');
-    const regionId = $(checkbox$.parents('.a-IG')).attr('id').slice(0, -3);
+  const updateModel = (input) => {
+    const rowId = input.closest('tr').data('id');
+    const regionId = $(input.parents('.a-IG')).attr('id').slice(0, -3);
     const ig$ = apex.region(regionId).widget();
     const { model } = ig$.interactiveGrid('getViews', 'grid');
     const record = model.getRecord(rowId);
@@ -81,14 +71,34 @@ const init = (itemId, options) => {
     });
 
     model.setValue(record, field, item$.val());
+  };
 
+  const updateDisplay = () => {
+    const checkbox$ = sr$.find('input[type="checkbox"]');
+
+    const attachOnKeyDown = () => {
+      $('.ig-simple-checkbox').each((i, e) => {
+        $(e).parents('td').off('.igsimplecheckbox').on('keydown.igsimplecheckbox', (k) => {
+          if (k.which === 32) {
+            const input$ = $(e).find('input[type="checkbox"]');
+            item$.val(!input$.prop('checked') ? checkedValue : uncheckedValue).change();
+            updateModel(item$);
+            updateDisplay();
+          }
+        });
+      });
+    };
+    checkbox$.prop('checked', item$.val() === checkedValue);
+    attachOnKeyDown();
+  };
+
+  sr$.append(render());
+
+  sr$.find('input[type="checkbox"]').on('change', (e) => {
+    const checkbox$ = $(e.currentTarget);
+    item$.val(checkbox$.prop('checked') ? checkedValue : uncheckedValue).change();
+    updateModel(checkbox$);
     item$.focus();
-  });
-
-  sr$.on('focusin', () => {
-    $(this).addClass('is-focused');
-  }).on('focusout', () => {
-    $(this).removeClass('is-focused');
   });
 
   updateDisplay();

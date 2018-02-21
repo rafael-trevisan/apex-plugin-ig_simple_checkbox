@@ -1,4 +1,4 @@
-.DS_Store/
+.DS_Store
 node_modules/
 dist/css/*.map
 dist/css/ca_trevis_apex_ig_simple_checkbox.css
