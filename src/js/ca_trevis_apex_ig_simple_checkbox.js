@@ -41,6 +41,7 @@ const init = (itemId, options) => {
       .attr('id', `${itemId}_${index}_0`)
       .attr('name', `${itemId}_${index}`)
       .attr('value', value)
+      .attr('tabindex', -1)
       .attr('data-checked-value', checkedValue)
       .attr('data-unchecked-value', uncheckedValue)
       .optionalAttr('checked', value === checkedValue)
