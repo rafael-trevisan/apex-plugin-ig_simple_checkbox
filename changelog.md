@@ -1,5 +1,8 @@
 # Changelog
 
+## 18.2.3
+- Fixed an intermittent issue that happened when using spacebar to switch checked/unchecked on Chrome.
+
 ## 18.2.2
 - New feature [Issue #2](https://github.com/rafael-trevisan/apex-plugin-ig_simple_checkbox/issues/2)
 

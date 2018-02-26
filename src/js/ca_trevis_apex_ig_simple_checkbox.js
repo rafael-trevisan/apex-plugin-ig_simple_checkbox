@@ -84,7 +84,9 @@ const init = (itemId, options) => {
             item$.val(!input$.prop('checked') ? checkedValue : uncheckedValue).change();
             updateModel(item$);
             updateDisplay();
+            return false;
           }
+          return true;
         });
       });
     };
